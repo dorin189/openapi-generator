@@ -1,0 +1,31 @@
+
+<div class="table-title">
+  <div class="row">
+    <div class="col md-6">
+      <h2>Lista de persoane</h2>
+    </div>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Prenume</th>
+      <th scope="col">Nume</th>
+      <th scope="col">Data nasterii</th>
+      <th scope="col">Numere de telefon</th>
+      <th scope="col">Sterge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of personList; index as i">
+      <td>{{i+1}}</td>
+      <td>{{person.firstName}}</td>
+      <td>{{person.lastName}}</td>
+      <td>{{person.birthDate | date: 'mediumDate'}}</td>
+      <td *ngIf="person.phones.length > 0">{{person.phones.toString()}}</td>
+      <td *ngIf="person.phones.length == 0">N/A</td>
+      <button type="button" class="btn btn-warning" (click)="remove(person)">Remove</button>
+    </tr>
+  </tbody>
+</table>
