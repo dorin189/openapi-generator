@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
+# install the latest version of "openapi-generator-cli"
+npm install @openapitools/openapi-generator-cli -g
+# use a specific version of "openapi-generator-cli"
+openapi-generator-cli version-manager set 4.3.1
+# generate angular based on openapi docs.
+openapi-generator-cli generate -i https://csg1.acrelec.com:8443/demo/SwaggerDemo/api.json -g typescript-angular -o dist
+# generate html ui 
+openapi-generator-cli generate -i https://csg1.acrelec.com:8443/demo/SwaggerDemo/api.json -g html2 -o dist
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -25,3 +34,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# openapi-generator
